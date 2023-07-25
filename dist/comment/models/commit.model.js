@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Photo = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const userPhoto_model_1 = require("./userPhoto.model");
+const userCommit_model_1 = require("./userCommit.model");
 const user_model_1 = require("../../users/model/user.model");
 let Photo = exports.Photo = class Photo extends sequelize_typescript_1.Model {
 };
@@ -38,10 +38,10 @@ __decorate([
     __metadata("design:type", String)
 ], Photo.prototype, "link", void 0);
 __decorate([
-    (0, sequelize_typescript_1.BelongsToMany)(() => user_model_1.User, () => userPhoto_model_1.UserPhoto),
+    (0, sequelize_typescript_1.BelongsToMany)(() => user_model_1.User, () => userCommit_model_1.UserCommit),
     __metadata("design:type", Array)
 ], Photo.prototype, "users", void 0);
 exports.Photo = Photo = __decorate([
-    (0, sequelize_typescript_1.Table)({ tableName: 'photo' })
+    (0, sequelize_typescript_1.Table)({ tableName: "photo" })
 ], Photo);
-//# sourceMappingURL=photo.model.js.map
+//# sourceMappingURL=commit.model.js.map

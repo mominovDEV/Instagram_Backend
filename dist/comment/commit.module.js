@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotosModule = void 0;
 const common_1 = require("@nestjs/common");
-const photos_service_1 = require("./photos.service");
-const photos_controller_1 = require("./photos.controller");
+const commit_service_1 = require("./commit.service");
+const commit_controller_1 = require("./commit.controller");
 const sequelize_1 = require("@nestjs/sequelize");
-const photo_model_1 = require("./models/photo.model");
-const userPhoto_model_1 = require("./models/userPhoto.model");
+const commit_model_1 = require("./models/commit.model");
+const userCommit_model_1 = require("./models/userCommit.model");
 let PhotosModule = exports.PhotosModule = class PhotosModule {
 };
 exports.PhotosModule = PhotosModule = __decorate([
     (0, common_1.Module)({
-        imports: [sequelize_1.SequelizeModule.forFeature([photo_model_1.Photo, userPhoto_model_1.UserPhoto])],
-        controllers: [photos_controller_1.PhotosController],
-        providers: [photos_service_1.PhotosService],
+        imports: [sequelize_1.SequelizeModule.forFeature([commit_model_1.Photo, userCommit_model_1.UserPhoto])],
+        controllers: [commit_controller_1.PhotosController],
+        providers: [commit_service_1.PhotosService],
     })
 ], PhotosModule);
-//# sourceMappingURL=photos.module.js.map
+//# sourceMappingURL=commit.module.js.map

@@ -9,31 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserPhoto = void 0;
+exports.UserCommit = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const user_model_1 = require("../../users/model/user.model");
-const photo_model_1 = require("./photo.model");
-let UserPhoto = exports.UserPhoto = class UserPhoto extends sequelize_typescript_1.Model {
+const commit_model_1 = require("./commit.model");
+let UserCommit = exports.UserCommit = class UserCommit extends sequelize_typescript_1.Model {
 };
 __decorate([
-    (0, sequelize_typescript_1.ForeignKey)(() => user_model_1.User),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         primaryKey: true,
     }),
     __metadata("design:type", Number)
-], UserPhoto.prototype, "userId", void 0);
+], UserCommit.prototype, "user_id", void 0);
 __decorate([
-    (0, sequelize_typescript_1.ForeignKey)(() => photo_model_1.Photo),
+    (0, sequelize_typescript_1.ForeignKey)(() => commit_model_1.Photo),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
         allowNull: false,
         primaryKey: true,
     }),
     __metadata("design:type", Number)
-], UserPhoto.prototype, "photoId", void 0);
-exports.UserPhoto = UserPhoto = __decorate([
-    (0, sequelize_typescript_1.Table)({ tableName: 'user_photo', timestamps: false })
-], UserPhoto);
-//# sourceMappingURL=userPhoto.model.js.map
+], UserCommit.prototype, "photoId", void 0);
+exports.UserCommit = UserCommit = __decorate([
+    (0, sequelize_typescript_1.Table)({ tableName: "user_id", timestamps: false })
+], UserCommit);
+//# sourceMappingURL=userCommit.model.js.map

@@ -1,6 +1,6 @@
-import { CreatePhotoDto } from './dto/create-photo.dto';
-import { UpdatePhotoDto } from './dto/update-photo.dto';
-import { Photo } from './models/photo.model';
+import { CreatePhotoDto } from "./dto/create-commit.dto";
+import { UpdatePhotoDto } from "./dto/update-commit.dto";
+import { Photo } from "./models/commit.model";
 export declare class PhotosService {
     private photoRepo;
     constructor(photoRepo: typeof Photo);

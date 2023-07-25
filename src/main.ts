@@ -4,7 +4,7 @@ import { DocumentBuilder } from "@nestjs/swagger";
 import { SwaggerModule } from "@nestjs/swagger/dist";
 
 import { AppModule } from "./app.module";
-
+          
 const start = async () => {
   try {
     const app = await NestFactory.create(AppModule);

@@ -1,5 +1,5 @@
-import { Model } from 'sequelize-typescript';
-import { User } from 'src/users/model/user.model';
+import { Model } from "sequelize-typescript";
+import { User } from "src/users/model/user.model";
 interface photoAttrs {
     id: string;
     title: string;

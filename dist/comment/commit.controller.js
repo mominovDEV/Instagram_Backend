@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotosController = void 0;
 const common_1 = require("@nestjs/common");
-const photos_service_1 = require("./photos.service");
-const create_photo_dto_1 = require("./dto/create-photo.dto");
-const update_photo_dto_1 = require("./dto/update-photo.dto");
+const commit_service_1 = require("./commit.service");
+const create_commit_dto_1 = require("./dto/create-commit.dto");
+const update_commit_dto_1 = require("./dto/update-commit.dto");
 let PhotosController = exports.PhotosController = class PhotosController {
     constructor(photosService) {
         this.photosService = photosService;
@@ -44,7 +45,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_photo_dto_1.CreatePhotoDto]),
+    __metadata("design:paramtypes", [typeof (_a = typeof create_commit_dto_1.CreatePhotoDto !== "undefined" && create_commit_dto_1.CreatePhotoDto) === "function" ? _a : Object]),
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "create", null);
 __decorate([
@@ -54,36 +55,36 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Get)('user/:id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)("user/:id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "findOneByUser", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Patch)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_photo_dto_1.UpdatePhotoDto]),
+    __metadata("design:paramtypes", [String, typeof (_b = typeof update_commit_dto_1.UpdatePhotoDto !== "undefined" && update_commit_dto_1.UpdatePhotoDto) === "function" ? _b : Object]),
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], PhotosController.prototype, "remove", null);
 exports.PhotosController = PhotosController = __decorate([
-    (0, common_1.Controller)('photo'),
-    __metadata("design:paramtypes", [photos_service_1.PhotosService])
+    (0, common_1.Controller)("photo"),
+    __metadata("design:paramtypes", [commit_service_1.PhotosService])
 ], PhotosController);
-//# sourceMappingURL=photos.controller.js.map
+//# sourceMappingURL=commit.controller.js.map

@@ -1,7 +1,7 @@
-import { PhotosService } from './photos.service';
-import { CreatePhotoDto } from './dto/create-photo.dto';
-import { UpdatePhotoDto } from './dto/update-photo.dto';
-import { Photo } from './models/photo.model';
+import { PhotosService } from "./commit.service";
+import { CreatePhotoDto } from "./dto/create-commit.dto";
+import { UpdatePhotoDto } from "./dto/update-commit.dto";
+import { Photo } from "./models/commit.model";
 export declare class PhotosController {
     private readonly photosService;
     constructor(photosService: PhotosService);

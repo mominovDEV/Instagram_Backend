@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotosService = void 0;
 const common_1 = require("@nestjs/common");
 const sequelize_1 = require("@nestjs/sequelize");
-const photo_model_1 = require("./models/photo.model");
+const commit_model_1 = require("./models/commit.model");
 const user_model_1 = require("../users/model/user.model");
 let PhotosService = exports.PhotosService = class PhotosService {
     constructor(photoRepo) {
@@ -26,7 +26,7 @@ let PhotosService = exports.PhotosService = class PhotosService {
         const createdPhoto = await this.photoRepo.create(newPhoto, {
             include: [user_model_1.User],
         });
-        await createdPhoto.$set('users', users);
+        await createdPhoto.$set("users", users);
         return createdPhoto;
     }
     findAll() {
@@ -37,7 +37,7 @@ let PhotosService = exports.PhotosService = class PhotosService {
             include: {
                 all: true,
                 attributes: {
-                    exclude: ['createdAt', 'updatedAt', 'UserPhoto'],
+                    exclude: ["createdAt", "updatedAt", "UserPhoto"],
                 },
             },
         });
@@ -55,20 +55,20 @@ let PhotosService = exports.PhotosService = class PhotosService {
         const [updatedCount, updatedUsers] = await this.photoRepo.update(updatePhotoDto, { where: { id }, returning: true });
         if (updatedCount > 0)
             return updatedUsers[0];
-        return { msg: 'Not found by given id' };
+        return { msg: "Not found by given id" };
     }
     async remove(id) {
         const deletedCount = await this.photoRepo.destroy({
             where: { id },
         });
         if (deletedCount > 0)
-            return { msg: 'deleted successfully' };
-        return { msg: 'Not found by given id' };
+            return { msg: "deleted successfully" };
+        return { msg: "Not found by given id" };
     }
 };
 exports.PhotosService = PhotosService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, sequelize_1.InjectModel)(photo_model_1.Photo)),
+    __param(0, (0, sequelize_1.InjectModel)(commit_model_1.Photo)),
     __metadata("design:paramtypes", [Object])
 ], PhotosService);
-//# sourceMappingURL=photos.service.js.map
+//# sourceMappingURL=commit.service.js.map
